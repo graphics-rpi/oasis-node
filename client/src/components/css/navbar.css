@@ -1,0 +1,38 @@
+#navbar {
+  background: white;
+  box-shadow: 0 1px 0px rgba(0,0,0,0.16);
+  margin: 10px 20px 10px 20px;
+}
+
+.buttonBar {
+  border-bottom: 2px solid #ADADAD;
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.buttonContainer {
+
+  /* border-right: 1px solid rgba(0,0,0,0.1); */
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+Button {
+  outline: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.nav-link {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

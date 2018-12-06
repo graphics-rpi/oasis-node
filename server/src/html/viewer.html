@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+        <script src="/viewer/docs/src/js/objFileContents.js"></script>
+        <script src="/viewer/docs/src/js/lib/three.js"></script>
+        <script src="/viewer/docs/src/js/lib/THREEx.KeyboardState.js"></script>
+        <script src="/viewer/docs/src/js/viewer.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    </head>
+    <body>
+       <div id="content" style="cursor:pointer">
+           <div id="container"></div>
+        </div>
+				<script>
+					var name = "<%=name%>";
+					// const id="/";
+					// const model = "nice_autumn_galleon/";
+					// var type="texture_fcv";
+					// var path = "/viewer/docs/user_output/";
+					// if(type==="geometry") {
+					// 	path = path + 'geometry/' + model + 'slow/'
+					// } else if(type==="texture_fcv") {
+					// 	path = path + 'texture/' + model + 'fcv/'
+					// 	type = "texture";
+					// } else if(type==="texture_ncv") {
+					// 	path = path + 'texture/' + model + 'ncv/'
+					// 	type = "texture";
+					// }
+
+					// var path = '/viewer/docs/user_output/texture/afvrqd/sim_0101_1300_-10500_CLEAR_ncv/' ;
+					var path = '/viewer/docs/user_output/texture/afvrqd/fcv/' ;
+					var type = 'texture';
+					$('#container').viewer(path, type, 490, 490)
+				</script>
+    </body>
+</html>

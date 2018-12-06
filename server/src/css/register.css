@@ -1,0 +1,101 @@
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+*{margin:0;padding:0;}
+
+body{
+  background:#2a2a2a;
+  font-family:'Open Sans',sans-serif;
+}
+
+.button{
+  width:100px;
+  background:#3399cc;
+  display:block;
+  margin:0 auto;
+  margin-top:1%;
+  padding:10px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+}
+
+.button:hover{
+  background:#2288bb;
+}
+
+#extra_info{
+
+}
+
+#register{
+  width:60%;
+  margin:0 auto;
+  margin-top:8px;
+  margin-bottom:8px;
+  transition:opacity 1s;
+  -webkit-transition:opacity 1s;
+}
+
+#triangle{
+  width:0;
+  border-top:12px solid transparent;
+  border-right:12px solid transparent;
+  border-bottom:12px solid #3399cc;
+  border-left:12px solid transparent;
+  margin:0 auto;
+}
+
+#register h1{
+  background:#3399cc;
+  padding:20px 0;
+  font-size:140%;
+  font-weight:300;
+  text-align:center;
+  color:#fff;
+}
+
+form{
+  background:#f0f0f0;
+  padding:2% 4% 2% 4%;
+}
+
+input[type='text'],input[type="email"],input[type="password"]{
+  width:25%;
+  background:#fff;
+  margin:4px 37.5%;
+  border:1px solid #ccc;
+  padding:16px;
+  font-family:'Open Sans',sans-serif;
+  font-size:95%;
+  color:#555;
+}
+
+input[type="submit"]{
+  width:50%;
+  background:#3399cc;
+  margin:0% 25%;
+  border:0;
+  padding:16px;
+  font-family:'Open Sans',sans-serif;
+  font-size:100%;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+}
+
+input[type="submit"]:hover{
+  background:#2288bb;
+}
+
+input[type='checkbox'] {
+  width:20px;
+  height:20px;
+  vertical-align:bottom;
+}
+
+

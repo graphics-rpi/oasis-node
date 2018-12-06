@@ -1,0 +1,19 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  width: 100%-40px;
+  padding: 0px 20px 0px 20px;
+  margin: 0px;
+  /* border: 1px solid black; */
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

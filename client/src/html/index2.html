@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <!--  the main stylesheet for our ui framework -->
+  <link rel="stylesheet" href="css/main-style.css" />
+  <!-- \ the main stylesheet for our ui framework -->
+
+  <link rel="stylesheet" href="css/AcidJs.Ribbon.CustomStylesTool.css" />
+  <link rel="stylesheet" href="css/AcidJs.Ribbon.MyCustomDropdown.css" />
+  <!-- \ Stylesheet AcidJs -->
+
+  <!--  Style sheets for sketching interface  -->
+  <link rel="stylesheet" href="css/lib/pure.css">
+  <!-- \ Style sheets for sketching interface  -->
+
+  <!--Bootstrap and related libraries -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <style>
+    #nav {
+        width: 100%;
+        height: 150px;
+        margin: 0px;
+        padding: 10px;
+        background: #eaeaea;
+      }
+    </style>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script>
+    var remove = false;
+    </script>
+</head>
+
+<body>
+  <div id="nav">
+    <button type="button" onClick="sketching_ribbon_handler('button-straight-wall');">Wall</button>
+    <button type="button" onClick="sketching_ribbon_handler('button-straight-window');">Window</button>
+    <button type="button" onClick="sketching_ribbon_handler('button-skylight');">Skylight</button>
+    <button type="button" onClick="sketching_ribbon_handler('button-bed');">Bed</button>
+    <button type="button" onClick="sketching_ribbon_handler('button-desk');">Desk</button>
+    <button type="button" onClick="sketching_ribbon_handler('button-straight-wall');">Wardrobe</button>
+    <button type="button" onClick="sketching_ribbon_handler('button-remove');">Remove</button>
+    <button type="button" onClick="sketching_ribbon_handler('button-change-orientation');">Orientation</button>
+    <button type="button" onClick="sketching_ribbon_handler('button-change-coordinates');">Location</button>
+    <button onClick="sketching_ribbon_handler('switch_tab_render');">Save</button>
+  </div>
+  <div id="maincontent">
+    <div id="container" style="border: 1px solid black"></div>
+  </div>
+  <div id="sidecontent">
+    <div id="title">
+      <form id="title_frm">
+        <p><b>Model Name</b>
+          <input id="model_title" name="title" type="text" maxlength="100" value="Loading Title..." style="text-align: center">
+        </p>
+      </form>
+      <div id="dev_info"> </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+  <script>
+    var socket = io.connect('localhost:5000');
+    //    socket.emit('createFolder', "test");
+    function task_remesh_json(title, wallfile) {
+      socket.emit('createFolder', {title: title, wallfile: wallfile});
+    }
+
+  </script>
+
+  <!--   jquery includes  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- \ jquery includes  -->
+
+  <!--   generate_HTML_form -->
+  <script src="js/feedback_util.js"></script>
+  <!-- \ generate_HTML_form -->
+
+  <!-- libraries used for the sketching interface -->
+  <script src="js/lib/raphael.js"></script>
+  <script src="js/lib/ndollar.js"></script>
+  <script src="js/lib/raphael.free_transform.js"></script>
+  <script src="js/lib/spin.min.js"></script>
+  <script src="js/objFileContents.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/random_word.js"></script>
+  <script src="js/sketching_ui.js"></script>
+  <script src="js/lib/bootbox.min.js"></script>
+  <!--Bootstrap and related libraries -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

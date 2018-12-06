@@ -1,0 +1,68 @@
+import sys
+import os
+from random import randint
+import time
+import fcntl
+
+def lockFile(lockfile):
+  fp = open(lockfile, 'a')
+  try:
+    fcntl.lockf(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
+  except:
+    return False
+  return True
+
+def printfiles(location):
+  dirs = os.listdir( location )
+  for file in dirs:
+    print file
+
+def deletefiles(location):
+  dirs = os.listdir( location )
+  for file in dirs:
+    try:
+      os.remove(file)
+    except:
+      print ("error " + file)
+
+def thesomething(filename, location, destination):
+  try:
+    with open(os.path.join(location, filename),'r') as f:
+      with open(os.path.join(destination, 'new' + filename),'w') as f1:
+        for line in f:
+          if "ROW" in line:
+            f1.write(line)
+    time.sleep(5)
+  except:
+    print("more error")
+
+def dosomething(filename, location, destination):
+  if (os.path.isfile(os.path.join(location, filename + '.lock')) == False):
+
+    lockFile(os.path.join(location, filename + '.lock'))
+    lockname = filename + ".lock"
+
+    #do yo thang here
+    thesomething(filename, location, destination)
+
+    os.remove(os.path.join(location, lockname))
+    os.remove(os.path.join(location, filename))
+
+    print("Processed " + filename)
+
+def process_jobs():
+  #tasks_loc = raw_input('Enter location of tasks ') # Name of text file coerced with +.txt
+  #output_loc = raw_input('Enter location of output ')
+
+  tasks_loc = 'user_task'
+  output_loc = 'user_output'
+
+  print('Doing mah jobs...')
+
+  #on mac happens in alpha/creation time, linux seems to be random
+  #order this somehow maybe?
+  for i in os.listdir(tasks_loc):
+    if i.endswith(".txt"):
+      dosomething(i, tasks_loc, output_loc)
+
+process_jobs()
