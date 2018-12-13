@@ -102,3 +102,9 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
     1. create in user_task: lsvo, remesh, lsvo/task, lsvo/wall, remesh/task, remesh/wall
     1. create in user_output: geometry, texture
     1. set permissions accordingly
+1. Run Oasis
+    1. start the taskmanager `cd server/bin \ run-one-constantly sh taskmangaer.sh`
+    1. start mongodb (this depends on how you installed mongo)
+    1. start the server, `cd server\ npm start`
+    1. start the client, `cd client\ npm start`
+    1. Note that you should have a sepaerate window for the server, client, and taskmanger (or use cron/pm2 or some kind of process scheduler)
