@@ -3,13 +3,16 @@ import React, {Component} from 'react';
 // import SketchPad from './sketchpad.js';
 import Navbar from './navbar.js';
 import Sketch from './sketch.js';
-import ThreeScene from './render.js';
+import Render from './render.js';
 import ModelSelector from './model_selection';
 import SimulationSelector from './simulation_selection';
 import TaskPage from './task_page';
 import Cookies from 'universal-cookie';
+import Survey from './survey';
 import * as util from './sketchUtil.js';
 import * as randomName from './random_name';
+import data from './navbarData';
+
 
 type State = {}
 type Props = {}
@@ -131,11 +134,10 @@ class OasisApp extends Component < State, Props > {
 			const wallFile = this.sketch.current.generateWallFile();
 			this.setState({currentSketch: sketchFile});
 			this.props.actions.saveModel(key, sketchFile, wallFile, this.state.sketchState.modelName)((res,b,c)=>{
-				console.log("done",b,c);
+				const {sketchState} = this.state;
+				sketchState.sketchChanged = false;
+				this.setState({sketchState:sketchState});
 			});
-			const {sketchState} = this.state;
-			sketchState.sketchChanged = false;
-			this.setState({sketchState:sketchState});
 		}
 
 	}
@@ -212,10 +214,11 @@ class OasisApp extends Component < State, Props > {
 	}
 
 	createSketch(config="") {
-		return (<div><div style={{width: this.state.width, marginLeft: "20px", marginTop: "0px", border: "2px solid #ADADAD"}}>
+		return (<div style={{display:"flex", marginLeft:"auto", marginRight:"auto", width:"1000px"}}><div><div style={{width: this.state.width, marginLeft: "20px", marginTop: "0px", border: "2px solid #ADADAD"}}>
 			{<Sketch width={this.state.width} height={this.state.width} radius={this.state.radius} stroke_width={5} stroke_width_selected={10} updateState={this.changeSketchState} state={this.state.sketchState} ref={this.sketch} config={config}/>}
 			</div>
-			<div style={{textAlign:"center", width: this.state.width, marginLeft:"20px"}}>{this.state.sketchState.draw_mode==="NEUTRAL" ? "" : this.state.instruction} {this.state.sketchState.draw_mode==="LOCATION" ? util.getLocationString(this.state.sketchState.longitude, this.state.sketchState.latidude) : ""}</div></div>);
+
+			<div style={{textAlign:"center", width: this.state.width, marginLeft:"20px"}}>{this.state.sketchState.draw_mode==="NEUTRAL" ? "" : this.state.instruction} {this.state.sketchState.draw_mode==="LOCATION" ? util.getLocationString(this.state.sketchState.longitude, this.state.sketchState.latidude) : ""}</div></div><div style={{width:"500px",padding:"0px", background:"white"}}><Survey page="sketchPage"/></div></div>);
 	}
 
 	createSelector() {
@@ -365,8 +368,6 @@ class OasisApp extends Component < State, Props > {
 			{name: "View and Analysis"}
 		];
 
-		 const data = [[[{name: "newmodel", tooltip: "Create New Model", type:"ADD MODEL", behavior:""}]],[[{name: "wall", tooltip: "Create Wall", type: "WALL", behavior: "select", instruction: "Create wall by dragging a line inside the circle"}, {name: "window", tooltip: "Create Window", type: "WINDOW", behavior: "select", instruction: "Create window by dragging a line along side existing walls (must first create a wall)"}, {name: "closet", tooltip: "Create Closet", type: "CLOSET", behavior: "", instruction: "Click and drag center icon to translate, click and drag side icon to rotate"}, {name: "desk", tooltip: "Create Desk", type: "DESK", behavior: "", instruction: "Click and drag center icon to translate, click and drag side icon to rotate"}, {name: "bed", tooltip: "Create Bed", type: "BED", behavior: "", instruction: "Click and drag center icon to translate, click and drag side icon to rotate"}, {name: "skylight", tooltip: "Create Skylight", type: "SKYLIGHT", behavior: "", instruction: "Click and drag center icon to translate, click and drag side icon to rotate, click and drag right icon to scale in x direction, click and drag on bottom icon to scale in y direction"}, {name: "remove", tooltip: "Remove Mode", type: "REMOVE", behavior: "select", instruction: "Click on any object to remove it"}], [{name: "map", tooltip: "Change Model Location", type: "LOCATION", behavior: "select", instruction: "Click on approximate geographic location of your model"}, {name: "compass", tooltip: "Change Model Orientation", type: "ORIENTATION", behavior: "select", instruction: "Click and drag to orient the surface"}], [{name: "info", tooltip: "Info", type: "INFO", behavior: "", instruction: "Click on questions for answers"}, {name: "help", tooltip: "Help", type: "HELP", behavior: "", instruction: "Unsure how to do something? Click on questions for answers"}, {name: "bugs", tooltip: "Report Bugs", type: "BUG", behavior: "", instruction: "Fill out bug form and submit"}]]];
-
 		var page = "";
  		switch(this.state.currentPage) {
 			case '1':
@@ -376,7 +377,7 @@ class OasisApp extends Component < State, Props > {
  				page = this.createSketch(this.state.currentSketch);
  				break;
 			case '3':
-				page = <ThreeScene
+				page = <Render
 					modelId="null"
 					modelName={this.state.sketchState.modelName} modelRenderStatus={this.state.modelRenderStatus}
 					checkRenderStatus={this.checkRenderStatus}
@@ -386,14 +387,14 @@ class OasisApp extends Component < State, Props > {
 				page = <TaskPage submitDaylightingTask={this.submitDaylightingTask} modelName={this.state.sketchState.modelName}/>
 				break;
 			case '5':
-				page = this.state.viewingSimulation.status ? <ThreeScene type="texture" modelName={this.state.viewingSimulation.modelName} simulationName={this.state.viewingSimulation.simulationName} colorMode={this.state.viewingSimulation.colorMode}/> :
+				page = this.state.viewingSimulation.status ? <Render type="texture" modelName={this.state.viewingSimulation.modelName} simulationName={this.state.viewingSimulation.simulationName} colorMode={this.state.viewingSimulation.colorMode}/> :
 				<SimulationSelector models={this.state.simulations}  deleteSimulation={this.deleteSimulation} openSimulationViewer={this.openSimulationViewer}/>
  			default:
  				break;
  		}
 
 		return (
-			<div style={{background:"white", overflow: "hidden"}}>
+			<div style={{background:"white", overflow: "hidden", width:"1000px", marginLeft: "auto", marginRight:"auto", minWidth: "1000px"}}>
 				<div style={{height: Math.max(window.innerHeight, 600), overflow: "hidden"}}>
 					<Navbar menu={menu}
 					data={data}

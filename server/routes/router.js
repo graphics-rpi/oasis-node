@@ -103,7 +103,7 @@ module.exports = app => {
 
     if (parsedUrl.type === "geometry") {
       res.render('viewer', {
-        modelName: "geometry/" + parsedUrl.model + "/slow/",
+        modelName: "geometry/" + parsedUrl.model + "/slow",
         type: "geometry"
       });
     } else if (parsedUrl.type === "texture") {

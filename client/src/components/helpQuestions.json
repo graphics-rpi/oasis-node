@@ -1,0 +1,87 @@
+{
+  "modelSelection": [{
+      "question": "How to create a new model",
+      "answer": "Click on the create new model button on the navigation bar."
+    },
+    {
+      "question": "How to view a previous model",
+      "answer": "Click on one of your existing models from the list of models."
+    },
+    {
+      "question": "How to delete a model",
+      "answer": "Click on the red remove button for the corresponding model row to delete the model."
+    }
+  ],
+  "sketchPage": [{
+      "question": "How to draw a wall",
+      "answer": "To draw a wall first click on the wall button to select it, then click and hold the mouse inside the canvas space (inside the circle). Drag and relase the mouse to define length and position of the wall. When you are done, click the wall button to deselect it."
+    },
+    {
+      "question": "How to draw a window",
+      "answer": "To draw a window first click on the window button to select it, then click and hold the mouse inside the canvas space (inside the circle) parallel to any wall.  Windows must go on walls. Drag and relase the mouse to define length and position of the window. The system will put the window on the closest wall. When you are done, click the window button to deselect it."
+    },
+    {
+      "question": "How to place a skylight",
+      "answer": "To place a skylight, click on the skylight button. Click and drag the center button to move it around. Click and drag the right button to scale it horizontally, the bottom button to scale it vertically, and the diagonal button to rotate the skylight. It is okay to have overhangs on the skylight."
+    },
+    {
+      "question": "How to place a bed, desk, or wardrobe",
+      "answer": "To place furniture, click on the desired furniture button. Click and drag the center button to move it around. Click and drag the diagonal button to rotate the furniture."
+    },
+    {
+      "question": "How to delete/remove an object",
+      "answer": "Click on the remove button to selct it, then click on object on the sketching canavas. After you are done removing, click on the remove button again to deselect the button."
+    },
+    {
+      "question": "How to change the orientation of a room",
+      "answer": "To change the orientation, click on the orientation button (compass) to select it. Drag the red text denoting north (N) and drag to your desired north orientation. When you are done, click the orientation button again to deselect it."
+    },
+    {
+      "question": "How to changed the location of the room in mthe world",
+      "answer": "To change the geographic location of your model, click the location button (map) to select it. A map should appear. Click on anywhere on the map to change the longitude and latitude coordinates of the model. When you are done click the location button again to deselect it and go back to your sketch."
+    },
+    {
+      "question": "What to do after I am finished building my room?",
+      "answer": "When you are done, you may preview a 3D render of your model by selecting the 3D render tab button on the navigation bar."
+    }
+  ],
+  "modelRender": [{
+      "question": "How do I look around my model?",
+      "answer": "Explore your model using your mouse and keyboard. Left mouse button to rotate the model, right mouse (or ctrl + left mouse) button to zoom in/out, and the directional arrows to move up, down, left or right."
+    },
+    {
+      "question": "What is Toggle Ceiling?",
+      "answer": "The toggle Ceiling button renders the ceiling to help you visualize your room."
+    },
+    {
+      "question": "What do I do after veiwing my model?",
+      "answer": "After you are done viewing your model, click on create task tab above  to render lighting in your created space."
+    }
+  ],
+  "taskPage": [{
+      "question": "How do I create a new task?",
+      "answer": "Fill in the form with all parameters and click the submit button."
+    },
+    {
+      "question": "What parameters can I change?",
+      "answer": "You can change the date, time, weather, and timezone."
+    },
+    {
+      "question": "What happens after I submit a task?",
+      "answer": "We will render your daylighting task and display your tasks in your view daylighting simulation tab."
+    }
+  ],
+  "simulationRender": [{
+      "question": "How do I look around my model?",
+      "answer": "Explore your model using your mouse and keyboard. Left mouse button to rotate the model, right mouse (or ctrl + left mouse) button to zoom in/out, and the directional arrows to move up, down, left or right."
+    },
+    {
+      "question": "What is the Analysis button?",
+      "answer": "The Analysis button shows under illuminated areas as blue-checkerboard and over illuminated areas as red-checkerboard."
+    },
+    {
+      "question": "What do I do after viewing my model?",
+      "answer": "After you are done viewing this simulation, you can: go back to the create task page to submit another daylighting simulation to render the same model at a different time of day, go back to the sketch page to make edits to your model, go back to the model selection page to create or load a new model."
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 import React, {
   Component
 } from 'react';
+
+import Survey from './survey';
+
 type State = {}
 
 type Props = {}
@@ -17,11 +20,11 @@ class ModelSelector extends Component < State, Props > {
 				<div style={{width:"100%"}} onClick={()=>{
 					this.props.loadModelFromDB(model._id, model.name);
 				}}>{model.name}</div>
-			<div style={{width:"30px", border: "1px solid red", textAlign:"center", borderRadius:"5px", color: "red"}} onClick={()=>{this.props.deleteModel(model._id, model.name)}}> X</div></div>
+			<div style={{width:"30px", border: "1px solid #ABABAB", textAlign:"center", borderRadius:"5px", color: "red", verticalAlign: "middle"}} onClick={()=>{this.props.deleteModel(model._id, model.name)}}> x</div></div>
 		});
 		// console.log(models);
-    return <div style={{marginLeft: "20px", marginRight:"20px"}}>{models}</div>
-  }
+    return (<div style={{marginLeft: "20px", marginRight:"20px", display: "flex"}}><div style={{width:"500px", marginRight:"0px", height: "800px", overflowY: "auto", overflow: "hidden"}}>{models}</div><div style={{width:"500px",padding:"0px", background:"white"}}><Survey page="modelSelection"/></div></div>);
+	}
 }
 
 export default ModelSelector;

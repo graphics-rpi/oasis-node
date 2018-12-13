@@ -3,14 +3,10 @@ import React, { Component } from 'react';
 import Iframe from 'react-iframe'
 import { css } from 'react-emotion';
 import {BeatLoader} from 'react-spinners';
+import Survey from './survey';
+
 
 class Render extends Component {
-
-
-// componentDidMount() {
-// 	this.props.checkRenderStatus();
-// }
-
 
 render() {
 		var viewerUrl = "http://localhost:3000/viewer/";
@@ -45,8 +41,9 @@ render() {
 
 
     return(
-      <div style={{marginLeft:"20px"}}>
-				{viewer}
+      <div style={{width:"1000px", display:"flex", marginLeft:"auto", marginRight:"auto"}}>
+				<div style={{marginLeft:"20px"}}>{viewer}</div>
+				<div style={{width:"500px",padding:"0px", background:"white"}}><Survey page={this.props.type==="geometry" ? "modelRender" : "simulationRender"}/></div>
 			</div>
     )
   }

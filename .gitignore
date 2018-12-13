@@ -1,0 +1,6 @@
+node_modules
+server/node_modules
+server/user_output
+server/user_task
+client/node_modules
+

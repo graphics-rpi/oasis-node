@@ -32,17 +32,17 @@ class Navbar extends Component<State, Props> {
     };
   }
 
-  toggle(tab) {
+  async toggle(tab) {
     if (this.props.activeTab !== tab) {
       if(this.props.activeTab==='2') {
-      	this.props.saveSketch();
+      	await this.props.saveSketch();
 				if(tab==='3') {
 					this.props.renderModel();
 				}
       }
 
       this.props.updatePage(tab);
-      this.setState({selectedTool:""});
+      this.setState({selectedTool:"", toolTipOpen: false});
     }
   }
 
@@ -60,6 +60,7 @@ class Navbar extends Component<State, Props> {
       const btnName = btn.name;
       const btnType = btn.type;
       const tooltip = btn.tooltip;
+      const btnImage = btn.image;
       const instruction = btn.instruction;
 
       const name = btnName+"Btn";
@@ -76,7 +77,7 @@ class Navbar extends Component<State, Props> {
               this.setState({selectedTool: ""})
             }
           }}>
-            <img src={require('../images/'+btnName+'.svg')} width={"20px"} alt=""/>
+            <img src={require('../images/'+btnImage+'.svg')} width={"20px"} alt=""/>
           </Button>
           <Tooltip
             placement="bottom-end"
@@ -90,7 +91,9 @@ class Navbar extends Component<State, Props> {
     }
 
     return (
+
       <div id="navbar">
+
         <Nav tabs>
           <NavItem className="pointer">
             <NavLink className={classnames({
@@ -118,7 +121,7 @@ class Navbar extends Component<State, Props> {
               })} onClick={() => {
                 this.toggle('3');
               }}>
-              Render 3D
+              Render Model
             </NavLink>
           </NavItem>
 
@@ -146,8 +149,11 @@ class Navbar extends Component<State, Props> {
         <TabContent activeTab={this.props.activeTab}>
           <TabPane tabId="1">
 						<div className="buttonBar" style={{display:"flex"}}>
-              <div className="buttonContainer" style={{width: "42px"}}>
+              <div className="buttonContainer" style={{width: "42px", borderRight:"1px solid rgba(0,0,0,0.1)"}}>
                 {data[0][0].map(getBtn)}
+              </div>
+							<div className="buttonContainer">
+                {data[0][1].map(getBtn)}
               </div>
             </div>
           </TabPane>
@@ -160,34 +166,34 @@ class Navbar extends Component<State, Props> {
               <div className="buttonContainer" style={{width: "90px", borderRight: "1px solid rgba(0,0,0,0.1)"}}>
                 {data[1][1].map(getBtn)}
               </div>
-              <div className="buttonContainer">
+							<div className="buttonContainer">
                 {data[1][2].map(getBtn)}
               </div>
             </div>
           </TabPane>
 
           <TabPane tabId="3">
-            <Row>
-              <Col sm="12">
-
-              </Col>
-            </Row>
+						<div className="buttonBar" style={{display:"flex"}}>
+							<div className="buttonContainer">
+								{data[2][0].map(getBtn)}
+							</div>
+						</div>
           </TabPane>
 
           <TabPane tabId="4">
-            <Row>
-              <Col sm="12">
-
-              </Col>
-            </Row>
+						<div className="buttonBar" style={{display:"flex"}}>
+							<div className="buttonContainer">
+								{data[3][0].map(getBtn)}
+							</div>
+						</div>
           </TabPane>
 
           <TabPane tabId="5">
-            <Row>
-              <Col sm="12">
-
-              </Col>
-            </Row>
+						<div className="buttonBar" style={{display:"flex"}}>
+							<div className="buttonContainer">
+								{data[4][0].map(getBtn)}
+							</div>
+						</div>
           </TabPane>
         </TabContent>
     </div>

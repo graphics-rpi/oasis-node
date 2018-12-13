@@ -1,3 +1,4 @@
-node_modules
-user_output
-user_task
+node_modules/
+user_task/
+user_output/
+
