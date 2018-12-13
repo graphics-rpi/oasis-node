@@ -51,7 +51,7 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
 1. `make`
 1. Copy glui/include/GL/glui.h to /usr/include/
 1. Change file permission to 655 using chmod
-1. Copy glui/build/libglui_static.a to /usr/lib
+1. Copy glui/build/libglui_static.a to /usr/local/lib
 1. Change file permission to 755
 1. Rename to libglui.a
 1. Build Remesher 
@@ -83,26 +83,22 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
     1. OptiX_INCLUDE path should be ‘~/Optix/include’
 
 ## Build Website
-1. Download php, apache, postgres
-1. `sudo apt-get install php`
-1. `sudo apt-get install apache2`
-1. `sudo apt-get install php-pgsql`
-1. `sudo apt-get install postgresql`
-1. Setup Apache
-    1. Create new file called oasis.conf inside ‘/etc/sites-available/’
-    1. Navigate to /var/www and clone oasis to directory
-    1. `git clone “https://github.com/graphics-rpi/oasis.git”`
-    1. Put the following inside:
-
-        >`<VirtualHost *:80>` <br />
-        >  &nbsp;&nbsp;`ServerName oasis` <br />
-        >  &nbsp;&nbsp;`DocumentRoot "/var/www/oasis/"` <br />
-        >  &nbsp;&nbsp;`ErrorLog ${APACHE_LOG_DIR}/error.ErrorLog` <br />
-        >`</VirtualHost>`
-1. Enable oasis
-    1. `sudo a2ensite oasis.conf`
-    1. `service apache2 reload`
-1. Disable default apache page
-    1. `sudo a2dis 000-default.conf`
-    1. `service apache2 reload`
-1. Test by going to localhost
+1. Install NodeJS
+1. Install nvm (node version manager) for NodeJS 
+    1. `sudo apt-get install build-essential libss1-dev`
+    1. `curl-o-https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash`
+    1. restart terminal and then run `nvm install 8`
+    1. `nvm install 8`
+    1. `nvm alias default v8.14.0`
+1. Install MongoDB 
+    1. Follow the docs on `https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/`
+1. Install oasis-node
+    1. Install server dependencies (`cd server\ npm install`)
+    1. Install client dependencies (`cd client\ npm install`)
+1. Install run-one
+    1. `sudo apt-get install run-one`
+1. Initialize the folder structure 
+    1. create in the server directory two folders: user_task, user_output
+    1. create in user_task: lsvo, remesh, lsvo/task, lsvo/wall, remesh/task, remesh/wall
+    1. create in user_output: geometry, texture
+    1. set permissions accordingly
