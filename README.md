@@ -1,6 +1,6 @@
-# From Clean Machine to Lean Machine
+# From Clean Machine to Lean Machine (Installation Instructions)
 
-Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken to compile and run advanced computer graphics homeworks, the remesher, and lsvo.
+Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken to compile and run oasis, remesher, and lsvo. Please see the wiki for developer guide and more documentation.
 
 ## Installing Nvidia 
 1.  `sudo apt-get purge nvidia*`
