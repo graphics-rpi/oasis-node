@@ -108,3 +108,11 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
     1. start the server, `cd server\ npm start`
     1. start the client, `cd client\ npm start`
     1. Note that you should have a sepaerate window for the server, client, and taskmanger (or use cron/pm2 or some kind of process scheduler)
+    
+## Setup Domain
+1. Install nginx
+    1. Set port 80 to redirect to https:
+    1. Set port 443 ssl certs and key (currently located in apache2/ssl)
+    1. Set port 443 proxy path to 127.0.0.1:3000 (default for client server)
+1. Add domain to /etc/hosts
+1. Test by going to https://oasis.cs.rpi.edu
