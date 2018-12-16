@@ -9,7 +9,7 @@ import Survey from './survey';
 class Render extends Component {
 
 render() {
-		var viewerUrl = "http://localhost:3000/viewer/";
+		var viewerUrl = "https://oasis.cs.rpi.edu/viewer/";
 		if(this.props.type==="geometry") {
 			viewerUrl += ("?id="+this.props.modelId); // user id
 			viewerUrl += ("?model="+this.props.modelName); // model name

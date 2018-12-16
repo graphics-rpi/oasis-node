@@ -19,7 +19,7 @@ chmod -R 755 $2
 
 # Run remesh tweening (Converting from wall file to obj)
 cd $2/tween
-/home/sensen/oasis_dependencies/remesher/build/remesh \
+/home/oasis/oasis_dependencies/remesher/build/remesh \
   -i $1 \
   -o foo.obj \
   -tweening \
@@ -37,7 +37,7 @@ chmod 755 *
 cd $2/slow
 echo "===========================SLOW======================"
 #run slow remesher
-/home/sensen/oasis_dependencies/remesher/build/remesh \
+/home/oasis/oasis_dependencies/remesher/build/remesh \
   -i $1 \
   -create_surface_cameras \
   -non_zero_interior_area \

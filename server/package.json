@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sensenChen/oasis-node.git"
+    "url": "git+https://github.com/oasisChen/oasis-node.git"
   },
   "keywords": [
     "graphics",
@@ -55,7 +55,7 @@
   "author": "RPI Graphics",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sensenChen/oasis-node/issues"
+    "url": "https://github.com/oasisChen/oasis-node/issues"
   },
-  "homepage": "https://github.com/sensenChen/oasis-node#readme"
+  "homepage": "https://github.com/oasisChen/oasis-node#readme"
 }

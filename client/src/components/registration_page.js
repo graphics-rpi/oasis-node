@@ -63,7 +63,7 @@ class RegistrationPage extends Component < State, Props > {
                 <br/>
 
                 <div>
-                  Sensen Chen
+                  oasis Chen
                   <a href="mailto:chens16@rpi.edu">{' '} (chens16@rpi.edu)</a>.<br/>
                   Rensselaer Polytechnic Institute
                   <br/>

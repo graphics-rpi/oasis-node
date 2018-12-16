@@ -1,13 +1,13 @@
 Content-type: text/html
 =====================Arguments recived====================
-This is daylighting in/output)   /home/sensen/oasis-node/server/user_output/texture/afvrqd/fcv/
+This is daylighting in/output)   /home/oasis/oasis-node/server/user_output/texture/afvrqd/fcv/
 This is month)           01
 This is day)           01
 This is hour)          18
 This is minute)          0
 this is weather)         CLEAR
 this is mode)          fcv
-geometry folder)         /home/sensen/oasis-node/server/user_output/geometry/afvrqd/
+geometry folder)         /home/oasis/oasis-node/server/user_output/geometry/afvrqd/
 =======================LSVO======================
 remesh param ./lsvo 
 remesh param -i 
@@ -33,7 +33,7 @@ non-remesh param -toobright
 args
 arg 0 : ./lsvo
 arg 1 : -i
-arg 2 : /home/sensen/oasis-node/server/user_output/texture/afvrqd/fcv/foo.obj
+arg 2 : /home/oasis/oasis-node/server/user_output/texture/afvrqd/fcv/foo.obj
 arg 3 : -t
 arg 4 : 3000
 arg 5 : -patches
@@ -18602,15 +18602,15 @@ MATERIAL furniture_bed  furniture_bed count = 0 area = 0
 MATERIAL furniture_desk  furniture_desk count = 0 area = 0
 MATERIAL furniture_wardrobe  furniture_wardrobe count = 0 area = 0
 MATERIAL wall_0  wall_0 count = 0 area = 0
-READING geolocation FILE: /home/sensen/oasis-node/server/user_output/texture/afvrqd/fcv/foo.geoloc
+READING geolocation FILE: /home/oasis/oasis-node/server/user_output/texture/afvrqd/fcv/foo.geoloc
   n   = -2.834
   lon = 41.86
   lat = -72.05
 Inside Set North Angle Copy oldvalue:0 newvalue:-2.834
 mesh.h setCoordinateCopy -72.05,41.86
 Mesh::SeedPatches, desired # = 1000
-/home/sensen/oasis-node/server/bin
+/home/oasis/oasis-node/server/bin
 ===============MORGIFY TWEEN HACK=================
-/home/sensen/oasis-node/server/bin
+/home/oasis/oasis-node/server/bin
 =============== End Script =======================
 fcv

@@ -21,7 +21,7 @@ then
 fi
 
 touch $1/pending.lock
-cd /home/sensen/oasis_dependencies/lsvo/build
+cd /home/oasis/oasis_dependencies/lsvo/build
 echo "=======================LSVO======================"
 # Move where lsvo is built (it contains optix exexutables)
 

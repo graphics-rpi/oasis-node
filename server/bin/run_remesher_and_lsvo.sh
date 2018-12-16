@@ -22,7 +22,7 @@ chmod -R 755 $2
 
 # Run remesh tweening
 cd $2/tween
-/home/sensen/oasis_dependencies/remesher/build/remesh \
+/home/oasis/oasis_dependencies/remesher/build/remesh \
   -i $1 \
   -o foo.obj \
   -tweening \
@@ -40,7 +40,7 @@ chmod 755 *
 cd $2/slow
 echo "===========================SLOW======================"
 #run slow remesher
-/home/sensen/oasis_dependencies/remesher/build/remesh \
+/home/oasis/oasis_dependencies/remesher/build/remesh \
   -i $1 \
   -create_surface_cameras \
   -non_zero_interior_area \
@@ -59,8 +59,8 @@ echo "===========================LSVO======================"
 #Run lsvo we are still in the slow folder
 #pushd /home/nordhr/Documents/daylighting_repo/lsvo/build
 #/home/nordhr/Documents/daylighting_repo/lsvo/build/lsvo \
-cd /home/sensen/oasis_dependencies/lsvo/build
-/home/sensen/oasis_dependencies/lsvo/build/lsvo \
+cd /home/oasis/oasis_dependencies/lsvo/build
+/home/oasis/oasis_dependencies/lsvo/build/lsvo \
   -i ${2}slow/foo.obj \
   -t 3000 \
   -patches 500 -offline \
