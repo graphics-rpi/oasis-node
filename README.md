@@ -1,8 +1,33 @@
-# From Clean Machine to Lean Machine (Installation Instructions)
+Online Architectural Sketching Interface for Simulations
+======================
 
-Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken to compile and run oasis, remesher, and lsvo. Please see the wiki for developer guide and more documentation.
+Have you ever had trouble using your computer, tablet, or TV because of glare from the sun? Glare is one of the daylighting challenges that can be predicted with simulation and analysis tools. These issues can be minimized or corrected with thoughtful architectural design and the use of window shades, diffusing screens, and other advanced daylighting materials and technology.
 
-## Installing Nvidia 
+OASIS provides an easy-to-use interface for the design of spaces such as bedrooms, living rooms, and offices. This tool allows users to study the complex and dynamic nature of illumination from the sun and sky within these interior spaces at different times of the day, different seasons of the year, and different weather conditions.
+
+Your participation, creative designs, and feedback will help us improve our tool. Thanks!
+
+## Table of content
+
+- [Installation](#installation)
+    - [Installing NVIDIA Drivers](#nvidia-drivers)
+    - [Installing CUDA 8.0](#cuda)
+    - [Installing Optix 5.1](#optix)
+    - [Installing Remesher](#remesher)
+    - [Installing LSVO](#lsvo)
+    - [Build Website](#build-website)
+    - [Setup Domain](#setup-domain)
+- [System Overview](#system-overview)
+- [Authentication Overview](#authentication-overview)
+- [New Module Guide](#new-module-guide)
+- [Exposing Routes](#exposing-routes)
+
+    
+## Installation
+
+From Clean Machine to Lean Machine. Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken to compile and run oasis, remesher, and lsvo. Please see the wiki for developer guide and more documentation.
+
+### NVIDIA Drivers
 1.  `sudo apt-get purge nvidia*`
 1.  `sudo add-apt-repository ppa:graphics-drivers/`
 1.  `sudo apt-get`
@@ -11,8 +36,8 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
 
 *you might also need nvidia-390, nvidia-396, nvidia-384
 
-## Installing CUDA 8.0.61
-1. Download run files from Nvidia website or download from google drive oasis directory
+### CUDA
+1. Download run files (CUDA 8.0) from Nvidia website or download from google drive oasis directory
 1. ctrl-alt-f1 and login 
 1. `sudo service lightdm stop`
 1. `chmod +x <filename>.run` on both run files, but install the longer name one first
@@ -24,7 +49,7 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
 
 *Install in default locations
 
-### fixing potential login loops
+#### fixing potential login loops
 
 1. `ctrl-alt-f1 and login`
 1. `sudo ubuntu-drivers list`   
@@ -32,8 +57,8 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
 1. `sudo ubuntu-drivers autoinstall `    
 1. `Sudo service lightdm restart`
 
-## Installing Optix 5.1
-1. Download run file from Nvidia website or download from google drive oasis directory
+### Optix
+1. Download run file from Nvidia website (Optix 5.1) or download from google drive oasis directory
 1. Move run file to user root directory
 1. Use `chmod +x <filname>.sh` to change file permission
 1. To run file do `sh <filename>.sh`
@@ -42,7 +67,7 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
 1. Download oasis_dependencies from graphics_rpi repository
     1. `git clone “https://github.com/graphics-rpi/oasis_dependencies”`
 
-## Remesher
+### Remesher
 1. Go into oasis_dependencies
 1. Clone and build GLUI  from https://github.com/libglui/glui
 1. Create folder ‘build’ inside cloned repo and navigate to it
@@ -62,7 +87,7 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
     1. There should not be any issues other than warnings
     1. Run ‘make’
 
-## LSVO
+### LSVO
 1. Download and install the following packages:
 1. `sudo apt-get install libpng12-dev libjpeg8-dev`
 1. `sudo apt-get install qt4-dev-tools`
@@ -82,7 +107,7 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
     1. Same goes for optixu
     1. OptiX_INCLUDE path should be ‘~/Optix/include’
 
-## Build Website
+### Build Website
 1. Install NodeJS
 1. Install nvm (node version manager) for NodeJS 
     1. `sudo apt-get install build-essential libss1-dev`
@@ -109,10 +134,18 @@ Starting with a fresh install of Ubuntu 16.04 LTS the following steps were taken
     1. start the client, `cd client\ npm start`
     1. Note that you should have a sepaerate window for the server, client, and taskmanger (or use cron/pm2 or some kind of process scheduler)
     
-## Setup Domain
+### Setup Domain
 1. Install nginx
     1. Set port 80 to redirect to https:
     1. Set port 443 ssl certs and key (currently located in apache2/ssl)
     1. Set port 443 proxy path to 127.0.0.1:3000 (default for client server)
 1. Add domain to /etc/hosts
 1. Test by going to https://oasis.cs.rpi.edu
+
+## System Overview
+
+## Authentication Overview
+
+## New Module Guide
+
+## Exposing Routes
