@@ -143,7 +143,7 @@ From Clean Machine to Lean Machine. Starting with a fresh install of Ubuntu 16.0
 1. Test by going to https://oasis.cs.rpi.edu
 
 ## System Overview
-
+<div><img src="" alt="overview" title="overview" align="right" height="60"/></div>
 ## Authentication Overview
 
 ## New Module Guide
